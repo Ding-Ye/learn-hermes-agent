@@ -4,6 +4,18 @@
 *.out
 go.work.sum
 agents/*/bin/
+# Compiled session binaries dropped by `go build ./...` at module root.
+agents/s01-loop/s01
+agents/s02-tool-registry/s02
+agents/s03-skills/s03
+agents/s04-session/s04
+agents/s05-memory/s05
+agents/s06-plugins-curator/s06
+agents/s07-mcp/s07
+agents/s08-terminal-backends/s08
+agents/s09-multiprocess/s09
+agents/s10-platforms/s10
+agents/s_full/s_full
 
 # Node
 node_modules/
