@@ -1,0 +1,34 @@
+# s10 sample interactions
+
+# Setup:
+#   ./s10 gateway -addr :7079 &
+#   ./s10 scheduler -interval 1s -echo &
+
+# Telegram simulated webhook:
+#   curl -X POST http://localhost:7079/webhook/telegram \
+#     -H 'Content-Type: application/json' \
+#     -d '{"update_id":1,"message":{"from":{"id":42,"username":"yeding"},
+#                                    "chat":{"id":99},"text":"hi bot"}}'
+#   {"job_id":1}
+
+# Discord simulated interaction:
+#   curl -X POST http://localhost:7079/webhook/discord \
+#     -H 'Content-Type: application/json' \
+#     -d '{"type":2,"channel_id":"987","member":{"user":{"id":"42","username":"yeding"}},
+#         "data":{"name":"ask","options":[{"name":"prompt","value":"hello"}]}}'
+#   {"job_id":2}
+
+# stderr (gateway+scheduler):
+#   [gw] listening on 127.0.0.1:7079
+#   [gw] telegram: dry-run | discord: dry-run
+#   [sched] interval=1s echo=true
+#   [sched] [scheduler] running job 1 (source=telegram)
+#   [telegram dry-run] would send to chat=99: echo: hi bot
+#   [sched] [scheduler] running job 2 (source=discord)
+#   [discord dry-run] would post to channel=987: echo: hello
+
+# ./s10 jobs (after both webhooks):
+#   #1    telegram  done     {"channel_id":"99","user_id":"yeding#42","text":"hi bot"}
+#         result: echo: hi bot
+#   #2    discord   done     {"channel_id":"987","user_id":"yeding#42","text":"hello"}
+#         result: echo: hello

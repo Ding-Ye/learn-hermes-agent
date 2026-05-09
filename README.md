@@ -25,7 +25,7 @@
 | **s07** | [MCP 集成](./docs/zh/s07-mcp.md) | JSON-RPC over stdio + 双模式 binary 自带端到端测试 | ✅ |
 | **s08** | [Terminal Backend](./docs/zh/s08-terminal-backends.md) | `Environment` 接口 + 工厂：local / docker:image，统一 `ExecResult` | ✅ |
 | **s09** | [Multi-process 架构](./docs/zh/s09-multiprocess.md) | **CLI / Gateway / Scheduler 三进程 + Kanban SQLite + 原子 claim** ★架构跃迁 | ✅ |
-| s10   | Gateway 平台适配器 | Telegram + Discord 两个 adapter | ⏳ |
+| **s10** | [Gateway 平台适配器](./docs/zh/s10-platforms.md) | Telegram + Discord webhook adapter，dry-run 模式可不要 token 演示 | ✅ |
 | s_full | 端到端集成 | 跨 session、跨平台、有 cron 的完整业务场景 | ⏳ |
 | 附录 A | Atropos / RL 心智模型 | 不重写，只画图讲学习闭环 | ⏳ |
 | 附录 B | 上游源码导读地图 | 完整的 hermes-agent Python 阅读路线 | ⏳ |

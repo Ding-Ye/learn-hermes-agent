@@ -10,4 +10,5 @@ use (
 	./agents/s07-mcp
 	./agents/s08-terminal-backends
 	./agents/s09-multiprocess
+	./agents/s10-platforms
 )

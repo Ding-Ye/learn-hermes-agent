@@ -25,7 +25,7 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | **s07** | [MCP integration](./docs/en/s07-mcp.md) | JSON-RPC over stdio + dual-mode binary with self-contained e2e test | ✅ |
 | **s08** | [Terminal backend](./docs/en/s08-terminal-backends.md) | `Environment` interface + factory: local / docker:image, uniform `ExecResult` | ✅ |
 | **s09** | [Multi-process](./docs/en/s09-multiprocess.md) | **3 processes (CLI / Gateway / Scheduler) + Kanban SQLite + atomic claim** ★architectural leap | ✅ |
-| s10   | Gateway adapters | Telegram + Discord two adapters | ⏳ |
+| **s10** | [Gateway adapters](./docs/en/s10-platforms.md) | Telegram + Discord webhook adapters; dry-run mode demos without tokens | ✅ |
 | s_full | End-to-end | Cross-session, cross-platform business scenario with a cron job | ⏳ |
 | App. A | Atropos / RL | Mental model only — diagrams, no rewrite | ⏳ |
 | App. B | Upstream map | Full reading map of the hermes-agent Python source | ⏳ |

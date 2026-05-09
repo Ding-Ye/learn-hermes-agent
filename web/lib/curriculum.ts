@@ -88,7 +88,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Gateway 平台适配器（Telegram + Discord）",
       en: "Gateway platform adapters (Telegram + Discord)",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s_full-integration",
