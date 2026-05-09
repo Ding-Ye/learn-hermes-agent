@@ -61,7 +61,7 @@ export const CURRICULUM: ChapterMeta[] = [
     slug: "s07-mcp",
     num: "s07",
     title: { zh: "MCP 集成", en: "MCP integration" },
-    available: false,
+    available: true,
   },
   {
     slug: "s08-terminal-backends",

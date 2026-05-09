@@ -86,6 +86,7 @@ function guessUpstreamFile(slug: string): string | null {
     "s04-session": "s04-session.py",
     "s05-memory": "s05-memory.py",
     "s06-plugins-curator": "s06-plugins-curator.py",
+    "s07-mcp": "s07-mcp.py",
   };
   return map[slug] ?? null;
 }
