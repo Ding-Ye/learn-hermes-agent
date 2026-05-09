@@ -1,0 +1,32 @@
+# s09 sample interaction
+
+# Setup (3 terminals or 3 background processes):
+#   ./s09 gateway -addr :7079             # Terminal 1
+#   ./s09 scheduler -interval 1s -echo    # Terminal 2
+
+# Post a message:
+#   curl -X POST -d '{"source":"demo","prompt":"hello"}' http://localhost:7079/msg
+#   {"job_id":1}
+
+# Inspect:
+#   ./s09 jobs
+#   #1     demo     done      2026-05-09 15:30:11  hello
+#          result: echo: hello
+
+# Schedule a recurring job:
+#   ./s09 cron add "every 30s" "show me the time"
+#   cron entry 1 added: every 30s -> "show me the time"
+
+# After the scheduler ticks past the cron interval:
+#   ./s09 jobs
+#   #2     cron     done      2026-05-09 15:30:42  show me the time
+#          result: echo: show me the time
+#   #1     demo     done      2026-05-09 15:30:11  hello
+#          result: echo: hello
+
+# Real LLM mode (drop -echo, set ANTHROPIC_API_KEY):
+#   ./s09 scheduler -interval 1s
+#   curl -X POST -d '{"prompt":"compute 17 * 23 with bash"}' http://localhost:7079/msg
+#   ./s09 jobs
+#   #3     gateway  done      2026-05-09 15:31:05  compute 17 * 23 with bash
+#          result: 17 * 23 = 391.

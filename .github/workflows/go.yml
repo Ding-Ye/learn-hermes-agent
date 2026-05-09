@@ -28,6 +28,7 @@ jobs:
           - s06-plugins-curator
           - s07-mcp
           - s08-terminal-backends
+          - s09-multiprocess
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

@@ -24,7 +24,7 @@
 | **s06** | [Plugin + Curator](./docs/zh/s06-plugins-curator.md) | **Plugin bus + 真自改进=自动归档闲置 memory** ★hermes 灵魂 | ✅ |
 | **s07** | [MCP 集成](./docs/zh/s07-mcp.md) | JSON-RPC over stdio + 双模式 binary 自带端到端测试 | ✅ |
 | **s08** | [Terminal Backend](./docs/zh/s08-terminal-backends.md) | `Environment` 接口 + 工厂：local / docker:image，统一 `ExecResult` | ✅ |
-| s09   | Multi-process 架构 | **CLI ↔ Gateway ↔ Scheduler ↔ Kanban DB** ★架构跃迁 | ⏳ |
+| **s09** | [Multi-process 架构](./docs/zh/s09-multiprocess.md) | **CLI / Gateway / Scheduler 三进程 + Kanban SQLite + 原子 claim** ★架构跃迁 | ✅ |
 | s10   | Gateway 平台适配器 | Telegram + Discord 两个 adapter | ⏳ |
 | s_full | 端到端集成 | 跨 session、跨平台、有 cron 的完整业务场景 | ⏳ |
 | 附录 A | Atropos / RL 心智模型 | 不重写，只画图讲学习闭环 | ⏳ |

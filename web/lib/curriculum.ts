@@ -79,7 +79,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Multi-process 架构：CLI/Gateway/Scheduler",
       en: "Multi-process architecture: CLI/Gateway/Scheduler",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s10-platforms",
