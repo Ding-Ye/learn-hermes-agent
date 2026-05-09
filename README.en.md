@@ -23,7 +23,7 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | **s05** | [Memory provider](./docs/en/s05-memory.md) | **Pluggable interface + FTS5 SQLite impl + memory_search/save tools** | ✅ |
 | **s06** | [Plugin + Curator](./docs/en/s06-plugins-curator.md) | **Plugin bus + real self-improving = auto-archive idle memories** ★soul | ✅ |
 | **s07** | [MCP integration](./docs/en/s07-mcp.md) | JSON-RPC over stdio + dual-mode binary with self-contained e2e test | ✅ |
-| s08   | Terminal backend | Factory pattern: local + Docker; placeholders for SSH/Modal/Daytona | ⏳ |
+| **s08** | [Terminal backend](./docs/en/s08-terminal-backends.md) | `Environment` interface + factory: local / docker:image, uniform `ExecResult` | ✅ |
 | s09   | Multi-process | **CLI ↔ Gateway ↔ Scheduler ↔ Kanban DB** ★architectural leap | ⏳ |
 | s10   | Gateway adapters | Telegram + Discord two adapters | ⏳ |
 | s_full | End-to-end | Cross-session, cross-platform business scenario with a cron job | ⏳ |

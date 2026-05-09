@@ -8,4 +8,5 @@ use (
 	./agents/s05-memory
 	./agents/s06-plugins-curator
 	./agents/s07-mcp
+	./agents/s08-terminal-backends
 )

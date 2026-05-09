@@ -27,6 +27,7 @@ jobs:
           - s05-memory
           - s06-plugins-curator
           - s07-mcp
+          - s08-terminal-backends
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

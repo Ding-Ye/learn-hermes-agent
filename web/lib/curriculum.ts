@@ -70,7 +70,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Terminal Backend 工厂",
       en: "Terminal backend factory",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s09-multiprocess",

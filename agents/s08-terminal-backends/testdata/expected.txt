@@ -1,0 +1,19 @@
+# s08 sample interactions
+
+# Local backend (default):
+#   ANTHROPIC_API_KEY=... go run . -v "what shell am I in? use the terminal tool"
+
+[s08] backend=local tools=[read_file terminal]
+[turn 0] -> terminal map[command:echo $SHELL]
+[turn 0] <- {"stdout":"/bin/bash\n","stderr":"","exit_code":0,"duration":2300000,"backend":"local","cwd":""}
+[turn 1] assistant: You're in /bin/bash.
+You're in /bin/bash.
+
+# Docker backend:
+#   ANTHROPIC_API_KEY=... go run . -v -env "docker:alpine:3.19" "what's the OS in this environment?"
+
+[s08] backend=docker:alpine:3.19 tools=[read_file terminal]
+[turn 0] -> terminal map[command:cat /etc/os-release]
+[turn 0] <- {"stdout":"NAME=\"Alpine Linux\"\nID=alpine\nVERSION_ID=3.19...\n",...,"backend":"docker:alpine:3.19"}
+[turn 1] assistant: It's Alpine Linux 3.19.
+It's Alpine Linux 3.19.
