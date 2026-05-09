@@ -1,0 +1,79 @@
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	"os/exec"
+)
+
+type Tool interface {
+	Schema() ToolSchema
+	Execute(ctx context.Context, input map[string]interface{}) (string, error)
+}
+
+type BashTool struct{}
+
+func NewBashTool() *BashTool { return &BashTool{} }
+
+func (b *BashTool) Schema() ToolSchema {
+	return ToolSchema{
+		Name:        "bash",
+		Description: "Run a shell command via /bin/bash -c and return combined stdout+stderr.",
+		InputSchema: map[string]interface{}{
+			"type": "object",
+			"properties": map[string]interface{}{
+				"command": map[string]interface{}{
+					"type":        "string",
+					"description": "The shell command to execute.",
+				},
+			},
+			"required": []string{"command"},
+		},
+	}
+}
+
+func (b *BashTool) Execute(ctx context.Context, input map[string]interface{}) (string, error) {
+	cmd, ok := input["command"].(string)
+	if !ok {
+		return "", fmt.Errorf("input.command must be a string, got %T", input["command"])
+	}
+	out, err := exec.CommandContext(ctx, "bash", "-c", cmd).CombinedOutput()
+	if err != nil {
+		return fmt.Sprintf("(exit error: %v)\n%s", err, string(out)), nil
+	}
+	return string(out), nil
+}
+
+type ReadFileTool struct{}
+
+func NewReadFileTool() *ReadFileTool { return &ReadFileTool{} }
+
+func (r *ReadFileTool) Schema() ToolSchema {
+	return ToolSchema{
+		Name:        "read_file",
+		Description: "Read the contents of a UTF-8 text file from disk.",
+		InputSchema: map[string]interface{}{
+			"type": "object",
+			"properties": map[string]interface{}{
+				"path": map[string]interface{}{
+					"type":        "string",
+					"description": "The file path.",
+				},
+			},
+			"required": []string{"path"},
+		},
+	}
+}
+
+func (r *ReadFileTool) Execute(ctx context.Context, input map[string]interface{}) (string, error) {
+	path, ok := input["path"].(string)
+	if !ok {
+		return "", fmt.Errorf("input.path must be a string, got %T", input["path"])
+	}
+	data, err := os.ReadFile(path)
+	if err != nil {
+		return fmt.Sprintf("read error: %v", err), nil
+	}
+	return string(data), nil
+}

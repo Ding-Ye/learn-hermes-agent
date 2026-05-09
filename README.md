@@ -21,7 +21,7 @@
 | **s03** | [Skills 系统](./docs/zh/s03-skills.md) | **Markdown prompt + 模板替换 + 内联 shell 展开** ★hermes 招牌 | ✅ |
 | **s04** | [Session 持久化](./docs/zh/s04-session.md) | JSON 文件 / 每 turn 原子写 / `-resume` `-branch` `-reset` `-list` | ✅ |
 | **s05** | [Memory Provider](./docs/zh/s05-memory.md) | **Pluggable 接口 + FTS5 SQLite 实现 + memory_search/save 工具** | ✅ |
-| s06   | Plugin + Curator | **Plugin 系统 + Curator 后台维护循环** ★hermes 灵魂 | ⏳ |
+| **s06** | [Plugin + Curator](./docs/zh/s06-plugins-curator.md) | **Plugin bus + 真自改进=自动归档闲置 memory** ★hermes 灵魂 | ✅ |
 | s07   | MCP 集成 | stdio + HTTP transport，融入同一 tool registry | ⏳ |
 | s08   | Terminal Backend | 工厂模式：local + Docker，预留 SSH/Modal/Daytona | ⏳ |
 | s09   | Multi-process 架构 | **CLI ↔ Gateway ↔ Scheduler ↔ Kanban DB** ★架构跃迁 | ⏳ |

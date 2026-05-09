@@ -25,6 +25,7 @@ jobs:
           - s03-skills
           - s04-session
           - s05-memory
+          - s06-plugins-curator
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

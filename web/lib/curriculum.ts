@@ -55,7 +55,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Plugin 系统 + Curator 自改进循环",
       en: "Plugin system + Curator self-improvement loop",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s07-mcp",
