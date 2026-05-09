@@ -1,0 +1,37 @@
+# s05 sample interactions
+
+# turn 1 (save):
+#   ANTHROPIC_API_KEY=... go run . -v "remember that my favorite color is blue, save it as a memory tagged 'preference'"
+
+[memory] db=/Users/yeding/.learn-hermes-agent/memory.db
+[session] id=s05-20260509-150713-a1b2c3 parent=- msgs=1
+[registry] tools=[bash memory_save memory_search read_file]
+[turn 0] assistant: I'll save that as a memory.
+[turn 0] -> memory_save map[content:user's favorite color is blue tags:[preference]]
+[turn 0] <- {"saved":true,"id":1,"tags":[preference]}
+[turn 1] assistant: Saved. I'll remember your favorite color is blue.
+Saved. I'll remember your favorite color is blue.
+
+
+# turn 2 (recall, new session):
+#   ANTHROPIC_API_KEY=... go run . -v "what's my favorite color? search your memory"
+
+[memory] db=/Users/yeding/.learn-hermes-agent/memory.db
+[session] id=s05-20260509-150812-d4e5f6 parent=- msgs=1
+[registry] tools=[bash memory_save memory_search read_file]
+[turn 0] assistant: Let me search.
+[turn 0] -> memory_search map[query:favorite color]
+[turn 0] <- {
+  "results": [
+    {
+      "id": 1,
+      "content": "user's favorite color is blue",
+      "tags": ["preference"],
+      "session_id": "s05-20260509-150713-a1b2c3",
+      "created_at": "...",
+      "score": -1.234
+    }
+  ]
+}
+[turn 1] assistant: Your favorite color is blue.
+Your favorite color is blue.

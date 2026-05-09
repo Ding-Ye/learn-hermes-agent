@@ -20,7 +20,7 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | **s02** | [Tool registry](./docs/en/s02-tool-registry.md) | Unified registry, shadow protection, generation counter | ✅ |
 | **s03** | [Skills system](./docs/en/s03-skills.md) | **Markdown prompts + template substitution + inline shell expansion** ★signature | ✅ |
 | **s04** | [Session persistence](./docs/en/s04-session.md) | JSON files / atomic save per turn / `-resume` `-branch` `-reset` `-list` | ✅ |
-| s05   | Memory provider | **Pluggable interface + one FTS5 SQLite implementation** | ⏳ |
+| **s05** | [Memory provider](./docs/en/s05-memory.md) | **Pluggable interface + FTS5 SQLite impl + memory_search/save tools** | ✅ |
 | s06   | Plugin + Curator | **Plugin system + Curator background maintenance loop** ★soul | ⏳ |
 | s07   | MCP integration | stdio + HTTP transport into the same tool registry | ⏳ |
 | s08   | Terminal backend | Factory pattern: local + Docker; placeholders for SSH/Modal/Daytona | ⏳ |

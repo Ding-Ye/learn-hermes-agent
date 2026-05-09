@@ -24,6 +24,7 @@ jobs:
           - s02-tool-registry
           - s03-skills
           - s04-session
+          - s05-memory
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

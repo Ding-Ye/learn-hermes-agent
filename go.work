@@ -5,4 +5,5 @@ use (
 	./agents/s02-tool-registry
 	./agents/s03-skills
 	./agents/s04-session
+	./agents/s05-memory
 )

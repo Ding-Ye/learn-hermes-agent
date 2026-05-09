@@ -46,7 +46,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Memory Provider + FTS5 实现",
       en: "Memory Provider + FTS5 implementation",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s06-plugins-curator",
