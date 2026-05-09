@@ -26,9 +26,9 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | **s08** | [Terminal backend](./docs/en/s08-terminal-backends.md) | `Environment` interface + factory: local / docker:image, uniform `ExecResult` | ✅ |
 | **s09** | [Multi-process](./docs/en/s09-multiprocess.md) | **3 processes (CLI / Gateway / Scheduler) + Kanban SQLite + atomic claim** ★architectural leap | ✅ |
 | **s10** | [Gateway adapters](./docs/en/s10-platforms.md) | Telegram + Discord webhook adapters; dry-run mode demos without tokens | ✅ |
-| s_full | End-to-end | Cross-session, cross-platform business scenario with a cron job | ⏳ |
-| App. A | Atropos / RL | Mental model only — diagrams, no rewrite | ⏳ |
-| App. B | Upstream map | Full reading map of the hermes-agent Python source | ⏳ |
+| **s_full** | [End-to-end](./docs/en/s_full-integration.md) | All 10 chapters wired up: architecture diagram + 16-step execution trace + demo script | ✅ |
+| **App. A** | [Atropos / RL](./docs/en/appendix-a-atropos-rl.md) | The truth behind "self-improving": trajectory generator + Atropos training | ✅ |
+| **App. B** | [Upstream map](./docs/en/appendix-b-upstream-map.md) | Full hermes-agent Python repo index + chapter cross-reference + extension exercises | ✅ |
 
 ---
 

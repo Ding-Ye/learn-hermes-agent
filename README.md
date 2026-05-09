@@ -26,9 +26,9 @@
 | **s08** | [Terminal Backend](./docs/zh/s08-terminal-backends.md) | `Environment` 接口 + 工厂：local / docker:image，统一 `ExecResult` | ✅ |
 | **s09** | [Multi-process 架构](./docs/zh/s09-multiprocess.md) | **CLI / Gateway / Scheduler 三进程 + Kanban SQLite + 原子 claim** ★架构跃迁 | ✅ |
 | **s10** | [Gateway 平台适配器](./docs/zh/s10-platforms.md) | Telegram + Discord webhook adapter，dry-run 模式可不要 token 演示 | ✅ |
-| s_full | 端到端集成 | 跨 session、跨平台、有 cron 的完整业务场景 | ⏳ |
-| 附录 A | Atropos / RL 心智模型 | 不重写，只画图讲学习闭环 | ⏳ |
-| 附录 B | 上游源码导读地图 | 完整的 hermes-agent Python 阅读路线 | ⏳ |
+| **s_full** | [端到端集成](./docs/zh/s_full-integration.md) | 全 10 章拼起来：架构图 + 一次请求的 16 步执行轨迹 + demo 脚本 | ✅ |
+| **附录 A** | [Atropos / RL 心智模型](./docs/zh/appendix-a-atropos-rl.md) | 解释 hermes 的 "self-improving" 真相：trajectory generator + Atropos 训练 | ✅ |
+| **附录 B** | [上游源码导读地图](./docs/zh/appendix-b-upstream-map.md) | hermes-agent 完整 Python 仓库索引 + 章节速查表 + 扩展练习 | ✅ |
 
 ---
 

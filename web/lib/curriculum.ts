@@ -94,7 +94,7 @@ export const CURRICULUM: ChapterMeta[] = [
     slug: "s_full-integration",
     num: "s_full",
     title: { zh: "端到端集成", en: "End-to-end integration" },
-    available: false,
+    available: true,
   },
   {
     slug: "appendix-a-atropos-rl",
@@ -103,7 +103,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "附录 A · Atropos / RL 心智模型",
       en: "Appendix A · Atropos / RL mental model",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "appendix-b-upstream-map",
@@ -112,7 +112,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "附录 B · 上游源码导读地图",
       en: "Appendix B · Upstream source-reading map",
     },
-    available: false,
+    available: true,
   },
 ];
 
