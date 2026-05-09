@@ -36,6 +36,7 @@ type CreateMessageRequest struct {
 	MaxTokens int          `json:"max_tokens"`
 	Messages  []Message    `json:"messages"`
 	Tools     []ToolSchema `json:"tools,omitempty"`
+	System    string       `json:"system,omitempty"`
 }
 
 type CreateMessageResponse struct {

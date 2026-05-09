@@ -48,13 +48,38 @@
 git clone https://github.com/Ding-Ye/learn-hermes-agent.git
 cd learn-hermes-agent
 
-# 跑 s01 的 mini-agent
+# 跑 s01 的 mini-agent（默认 Anthropic Claude）
 export ANTHROPIC_API_KEY=sk-ant-...
 cd agents/s01-loop
 go run . -v "compute 17 * 23 by running an expression in bash"
 ```
 
-需要 **Go ≥ 1.21**。s01 只用 stdlib。
+需要 **Go ≥ 1.21**。s01 只用 stdlib（multi-provider 翻译层 `provider_openai.go` 也是 stdlib）。
+
+### 多模型支持（DeepSeek / Qwen / Moonshot / 自托管 …）
+
+所有 session 都内置 **OpenAI-compatible 翻译层**，可直接接入国产和开源模型：
+
+```bash
+# DeepSeek
+export DEEPSEEK_API_KEY=sk-...
+go run . -provider deepseek -v "compute 17 * 23 with bash"
+
+# 阿里通义 Qwen
+export DASHSCOPE_API_KEY=sk-...
+go run . -provider qwen "..."
+
+# Moonshot Kimi
+export MOONSHOT_API_KEY=sk-... && go run . -provider moonshot "..."
+
+# Groq + Llama-3.3-70b（极速）
+export GROQ_API_KEY=gsk_... && go run . -provider groq "..."
+
+# 自托管 vLLM / SGLang（在 :8000 跑 OpenAI-compat endpoint）
+go run . -provider local -model your-model -v "..."
+```
+
+8 个 provider profile（anthropic / openai / deepseek / moonshot / qwen / groq / openrouter / local）开箱即用，单测覆盖 Anthropic ↔ OpenAI 双向 wire-format 翻译。完整指南：[多模型接入](./docs/zh/multi-model.md)。
 
 启动 Web doc viewer（双语阅读）：
 

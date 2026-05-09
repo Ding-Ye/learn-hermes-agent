@@ -48,13 +48,38 @@ The cost is the Python↔Go context switch. The "Upstream Source Reading" sectio
 git clone https://github.com/Ding-Ye/learn-hermes-agent.git
 cd learn-hermes-agent
 
-# Run s01's mini agent
+# Run s01's mini agent (Anthropic Claude by default)
 export ANTHROPIC_API_KEY=sk-ant-...
 cd agents/s01-loop
 go run . -v "compute 17 * 23 by running an expression in bash"
 ```
 
-Requires **Go ≥ 1.21**. s01 uses stdlib only.
+Requires **Go ≥ 1.21**. s01 uses stdlib only (the multi-provider translation in `provider_openai.go` is also stdlib).
+
+### Multi-model support (DeepSeek / Qwen / Moonshot / self-hosted …)
+
+Every session ships an **OpenAI-compatible translation layer**, so any provider that speaks the OpenAI Chat Completions wire format works out of the box:
+
+```bash
+# DeepSeek
+export DEEPSEEK_API_KEY=sk-...
+go run . -provider deepseek -v "compute 17 * 23 with bash"
+
+# Alibaba Tongyi Qwen
+export DASHSCOPE_API_KEY=sk-...
+go run . -provider qwen "..."
+
+# Moonshot Kimi
+export MOONSHOT_API_KEY=sk-... && go run . -provider moonshot "..."
+
+# Groq + Llama-3.3-70b (very fast)
+export GROQ_API_KEY=gsk_... && go run . -provider groq "..."
+
+# Self-hosted vLLM / SGLang (OpenAI-compat endpoint on :8000)
+go run . -provider local -model your-model -v "..."
+```
+
+Eight provider profiles (anthropic / openai / deepseek / moonshot / qwen / groq / openrouter / local) ship out of the box. Unit tests cover the bidirectional Anthropic ↔ OpenAI wire-format translation. Full guide: [Multi-model integration](./docs/en/multi-model.md).
 
 Start the Web doc viewer (bilingual):
 
