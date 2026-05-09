@@ -1,0 +1,13 @@
+# s07 sample interaction
+
+# Build first, then:
+#   ANTHROPIC_API_KEY=... ./s07 -v -mcp "echo=./s07 -server" "reverse 'hermes'"
+
+[echo-mcp] running in MCP server mode on stdio   # (this is from the subprocess)
+[mcp] echo connected; 2 tools registered
+[registry] 4 tools (gen=4): [bash mcp_echo_echo mcp_echo_reverse read_file]
+[turn 0] assistant: I'll reverse it.
+[turn 0] -> mcp_echo_reverse map[text:hermes]
+[turn 0] <- semreh
+[turn 1] assistant: 'hermes' reversed is 'semreh'.
+'hermes' reversed is 'semreh'.
