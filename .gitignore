@@ -1,0 +1,32 @@
+# Go
+*.exe
+*.test
+*.out
+go.work.sum
+agents/*/bin/
+
+# Node
+node_modules/
+.next/
+out/
+.vercel/
+*.tsbuildinfo
+next-env.d.ts
+
+# Env / local
+.env
+.env.local
+.env.*.local
+.DS_Store
+*.swp
+
+# Sessions / runtime artefacts
+agents/*/sessions/
+agents/*/data/
+*.sqlite
+*.db
+*.db-journal
+
+# IDEs
+.idea/
+.vscode/

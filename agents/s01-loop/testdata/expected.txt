@@ -1,0 +1,14 @@
+# s01 sample interaction
+
+# Run:
+#   ANTHROPIC_API_KEY=... go run . -v "compute 17 * 23 by running an expression in bash"
+#
+# Expected shape (exact text varies — LLMs aren't deterministic, so this
+# is a guide, not a golden file). Recording fixtures and replaying them
+# offline is introduced in s04.
+
+[turn 0] assistant: I'll use bash to compute 17 * 23.
+[turn 0] -> bash map[command:echo $((17 * 23))]
+[turn 0] <- 391
+[turn 1] assistant: 17 * 23 = 391.
+391

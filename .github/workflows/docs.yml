@@ -1,0 +1,56 @@
+name: docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "*.md"
+      - ".github/workflows/docs.yml"
+  pull_request:
+    paths:
+      - "docs/**"
+      - "*.md"
+      - ".github/workflows/docs.yml"
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: every chapter doc must have an Upstream Source Reading section
+        run: |
+          set -e
+          missing=0
+          for f in docs/zh/s*.md docs/en/s*.md; do
+            [ -e "$f" ] || continue
+            # Skip s_full and appendices for now — they're allowed to differ.
+            case "$f" in
+              *appendix*|*s_full*) continue ;;
+            esac
+            if ! grep -qE '^## Upstream Source Reading|^## 上游源码阅读' "$f"; then
+              echo "::error file=$f::missing 'Upstream Source Reading / 上游源码阅读' section"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: every zh chapter must have an en counterpart and vice versa
+        run: |
+          set -e
+          mismatch=0
+          for f in docs/zh/*.md; do
+            base="$(basename "$f")"
+            if [ ! -e "docs/en/$base" ]; then
+              echo "::error file=$f::no English counterpart at docs/en/$base"
+              mismatch=1
+            fi
+          done
+          for f in docs/en/*.md; do
+            base="$(basename "$f")"
+            if [ ! -e "docs/zh/$base" ]; then
+              echo "::error file=$f::no Chinese counterpart at docs/zh/$base"
+              mismatch=1
+            fi
+          done
+          exit $mismatch
