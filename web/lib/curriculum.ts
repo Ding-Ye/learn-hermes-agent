@@ -31,7 +31,7 @@ export const CURRICULUM: ChapterMeta[] = [
       zh: "Skills 系统：Markdown prompt + 模板 + shell 展开",
       en: "Skills: Markdown prompts + templates + shell expansion",
     },
-    available: false,
+    available: true,
   },
   {
     slug: "s04-session",

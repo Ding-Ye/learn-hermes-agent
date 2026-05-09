@@ -1,0 +1,30 @@
+# s03 sample interactions
+
+# Run:
+#   ANTHROPIC_API_KEY=... go run . -v "use skill_greet to say hello"
+#
+# Expected shape:
+
+[registry] 4 tools: [bash read_file skill_greet skill_summarize] (gen=4)
+[skills] 2 skills loaded from /Users/yeding/learn-hermes-agent/skills
+[turn 0] assistant: I'll use skill_greet.
+[turn 0] -> skill_greet map[]
+[turn 0] <- 你好。现在是 2026-05-09 13:51:33，工作目录是 /Users/yeding/learn-hermes-agent/agents/s03-skills。请用一句话向用户打招呼，并提醒他/她今天的日期。不要执行任何工具，直接回答。
+[turn 1] assistant: 你好！今天是 2026 年 5 月 9 日。
+你好！今天是 2026 年 5 月 9 日。
+
+
+# Run:
+#   ANTHROPIC_API_KEY=... go run . -v "use skill_summarize with input='./README.md'"
+#
+# Expected shape:
+
+[registry] 4 tools: [bash read_file skill_greet skill_summarize] (gen=4)
+[skills] 2 skills loaded from /Users/yeding/learn-hermes-agent/skills
+[turn 0] assistant: I'll use skill_summarize on ./README.md.
+[turn 0] -> skill_summarize map[input:./README.md]
+[turn 0] <- 任务：把下面这份内容做一份结构化摘要。... 输入内容（自动注入）：```<README contents>```...
+[turn 1] assistant: 1. 核心结论：... 2. 关键证据：... 3. 未解决的问题：无
+1. 核心结论：...
+2. 关键证据：...
+3. 未解决的问题：无
