@@ -2,4 +2,5 @@ go 1.21
 
 use (
 	./agents/s01-loop
+	./agents/s02-tool-registry
 )

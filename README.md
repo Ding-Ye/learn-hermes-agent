@@ -17,7 +17,7 @@
 | #     | 主题 | 教什么 hermes 机制 | 状态 |
 | ----- | ---- | ----------- | ---- |
 | **s01** | [最小 agent loop](./docs/zh/s01-minimum-loop.md) | messages / tool dispatch / stop_reason / provider 抽象 | ✅ |
-| s02   | Tool 注册系统 | 统一 registry，后续 MCP / skill 都进来 | ⏳ |
+| **s02** | [Tool 注册系统](./docs/zh/s02-tool-registry.md) | 统一 registry，shadow 防护，generation 计数器 | ✅ |
 | s03   | Skills 系统 | **Markdown prompt + 模板替换 + 内联 shell 展开** ★hermes 招牌 | ⏳ |
 | s04   | Session 持久化 | 消息历史 / token 计数 / `/resume` `/branch` `/reset` `/new` | ⏳ |
 | s05   | Memory Provider | **Pluggable 接口 + 一个 FTS5 SQLite 实现** | ⏳ |

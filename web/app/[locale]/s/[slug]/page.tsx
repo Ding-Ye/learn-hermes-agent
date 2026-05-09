@@ -81,6 +81,7 @@ function guessUpstreamFile(slug: string): string | null {
   // s01-minimum-loop → s01-loop.py (we keep the existing file name).
   const map: Record<string, string> = {
     "s01-minimum-loop": "s01-loop.py",
+    "s02-tool-registry": "s02-tool-registry.py",
   };
   return map[slug] ?? null;
 }

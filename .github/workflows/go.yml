@@ -21,6 +21,7 @@ jobs:
       matrix:
         session:
           - s01-loop
+          - s02-tool-registry
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

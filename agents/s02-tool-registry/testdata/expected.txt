@@ -1,0 +1,26 @@
+# s02 sample interactions
+
+# Run:
+#   ANTHROPIC_API_KEY=... go run . -v "show me the first 30 lines of agents/s02-tool-registry/main.go"
+#
+# Expected shape (LLMs aren't deterministic — exact text varies):
+
+[registry] 2 tools: [bash read_file] (gen=2)
+[turn 0] assistant: I'll read the file.
+[turn 0] -> read_file map[path:agents/s02-tool-registry/main.go]
+[turn 0] <- package main  import (  "context"  "flag" ...
+[turn 1] assistant: Here are the first 30 lines of main.go: ...
+<file content summary>
+
+
+# Run:
+#   ANTHROPIC_API_KEY=... go run . -v "what's today's date in ISO 8601 format?"
+#
+# Expected shape:
+
+[registry] 2 tools: [bash read_file] (gen=2)
+[turn 0] assistant: I'll check the current date with bash.
+[turn 0] -> bash map[command:date -u +%Y-%m-%dT%H:%M:%SZ]
+[turn 0] <- 2026-05-09T05:21:33Z
+[turn 1] assistant: Today is 2026-05-09 (UTC).
+2026-05-09 (UTC).

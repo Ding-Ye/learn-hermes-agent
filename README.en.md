@@ -17,7 +17,7 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | #     | Topic | Hermes mechanism | Status |
 | ----- | ----- | ---------------- | ------ |
 | **s01** | [Minimum agent loop](./docs/en/s01-minimum-loop.md) | messages / tool dispatch / stop_reason / provider abstraction | ✅ |
-| s02   | Tool registry | Unified registry; later MCP and skill commands plug in here | ⏳ |
+| **s02** | [Tool registry](./docs/en/s02-tool-registry.md) | Unified registry, shadow protection, generation counter | ✅ |
 | s03   | Skills system | **Markdown prompts + template substitution + inline shell expansion** ★signature | ⏳ |
 | s04   | Session persistence | Message history, token counting, `/resume` `/branch` `/reset` `/new` | ⏳ |
 | s05   | Memory provider | **Pluggable interface + one FTS5 SQLite implementation** | ⏳ |

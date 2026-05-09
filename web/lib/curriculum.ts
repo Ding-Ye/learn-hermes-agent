@@ -22,7 +22,7 @@ export const CURRICULUM: ChapterMeta[] = [
     slug: "s02-tool-registry",
     num: "s02",
     title: { zh: "Tool 注册系统", en: "Tool registry" },
-    available: false,
+    available: true,
   },
   {
     slug: "s03-skills",
