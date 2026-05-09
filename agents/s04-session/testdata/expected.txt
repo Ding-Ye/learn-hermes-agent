@@ -1,0 +1,36 @@
+# s04 sample interactions
+
+# Run 1 (new session):
+#   ANTHROPIC_API_KEY=... go run . -v "what is 17 * 23?"
+
+[session] id=s04-20260509-135133-a1b2c3 parent=- msgs=1 turns=0 in/out=0/0
+[turn 0] assistant: I'll compute 17 * 23 with bash.
+[turn 0] -> bash map[command:echo $((17 * 23))]
+[turn 0] <- 391
+[turn 1] assistant: 17 * 23 = 391.
+391
+
+
+# Run 2 (resume):
+#   ANTHROPIC_API_KEY=... go run . -resume s04-20260509-135133-a1b2c3 "now add 100"
+
+[session] id=s04-20260509-135133-a1b2c3 parent=- msgs=4 turns=2 in/out=312/89
+[turn 0] assistant: 391 + 100 = 491.
+491
+# stderr: [session] s04-20260509-135133-a1b2c3 saved (turns=3 in=520 out=124)
+
+
+# Run 3 (branch):
+#   ANTHROPIC_API_KEY=... go run . -branch s04-20260509-135133-a1b2c3 "what was the original product again?"
+
+# stderr: [session] branched s04-20260509-135533-d4e5f6 from s04-20260509-135133-a1b2c3
+[session] id=s04-20260509-135533-d4e5f6 parent=s04-20260509-135133-a1b2c3 msgs=4 turns=0 in/out=0/0
+[turn 0] assistant: The original product was 17 * 23 = 391.
+The original product was 17 * 23 = 391.
+
+
+# Run 4 (list):
+#   go run . -list
+
+s04-20260509-135533-d4e5f6  msgs=5  turns=1  in/out=312/45  updated=10s ago parent=s04-20260509-135133-a1b2c3
+s04-20260509-135133-a1b2c3  msgs=6  turns=3  in/out=520/124  updated=1m20s ago parent=-

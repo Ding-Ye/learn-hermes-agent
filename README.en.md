@@ -19,7 +19,7 @@ The pedagogy is borrowed from [shareAI-lab/learn-claude-code](https://github.com
 | **s01** | [Minimum agent loop](./docs/en/s01-minimum-loop.md) | messages / tool dispatch / stop_reason / provider abstraction | ✅ |
 | **s02** | [Tool registry](./docs/en/s02-tool-registry.md) | Unified registry, shadow protection, generation counter | ✅ |
 | **s03** | [Skills system](./docs/en/s03-skills.md) | **Markdown prompts + template substitution + inline shell expansion** ★signature | ✅ |
-| s04   | Session persistence | Message history, token counting, `/resume` `/branch` `/reset` `/new` | ⏳ |
+| **s04** | [Session persistence](./docs/en/s04-session.md) | JSON files / atomic save per turn / `-resume` `-branch` `-reset` `-list` | ✅ |
 | s05   | Memory provider | **Pluggable interface + one FTS5 SQLite implementation** | ⏳ |
 | s06   | Plugin + Curator | **Plugin system + Curator background maintenance loop** ★soul | ⏳ |
 | s07   | MCP integration | stdio + HTTP transport into the same tool registry | ⏳ |

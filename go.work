@@ -4,4 +4,5 @@ use (
 	./agents/s01-loop
 	./agents/s02-tool-registry
 	./agents/s03-skills
+	./agents/s04-session
 )

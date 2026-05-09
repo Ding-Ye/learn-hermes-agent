@@ -23,6 +23,7 @@ jobs:
           - s01-loop
           - s02-tool-registry
           - s03-skills
+          - s04-session
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-go@v5

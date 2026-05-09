@@ -37,7 +37,7 @@ export const CURRICULUM: ChapterMeta[] = [
     slug: "s04-session",
     num: "s04",
     title: { zh: "Session 持久化", en: "Session persistence" },
-    available: false,
+    available: true,
   },
   {
     slug: "s05-memory",

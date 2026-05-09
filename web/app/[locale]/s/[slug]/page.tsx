@@ -83,6 +83,7 @@ function guessUpstreamFile(slug: string): string | null {
     "s01-minimum-loop": "s01-loop.py",
     "s02-tool-registry": "s02-tool-registry.py",
     "s03-skills": "s03-skills.py",
+    "s04-session": "s04-session.py",
   };
   return map[slug] ?? null;
 }
